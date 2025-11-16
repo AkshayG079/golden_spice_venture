@@ -276,13 +276,13 @@ export default function Home() {
                   variants={scrollFadeUp}
                 >
                   <motion.h1
-                    className="text-[#181611] dark:text-white text-2xl sm:text-[32px] font-bold leading-tight max-w-[720px]"
+                    className="text-[#181611] text-2xl sm:text-[32px] font-bold leading-tight max-w-[720px]"
                     variants={slideInLeft}
                   >
                     Our Commitment to Quality and Sustainability
                   </motion.h1>
                   <motion.p
-                    className="text-[#897c61] dark:text-gray-300 text-base font-normal leading-normal max-w-[720px]"
+                    className="text-[#897c61]  text-base font-normal leading-normal max-w-[720px]"
                     variants={slideInRight}
                     transition={{ delay: 0.1 }}
                   >
@@ -319,7 +319,7 @@ export default function Home() {
                   ].map((card, i) => (
                     <motion.div
                       key={i}
-                      className="flex flex-1 gap-4 rounded-xl border border-[#FFC107]/20 bg-white dark:bg-gray-800 p-6 flex-col items-center text-center shadow-sm hover:shadow-xl transition-shadow"
+                      className="flex flex-1 gap-4 rounded-xl border border-[#FFC107]/20 bg-white  p-6 flex-col items-center text-center shadow-sm hover:shadow-xl transition-shadow"
                       variants={scrollFadeUp}
                       whileHover="hover"
                       custom={i}
@@ -338,10 +338,10 @@ export default function Home() {
                         {card.icon}
                       </motion.div>
                       <div className="flex flex-col gap-2">
-                        <h2 className="text-[#181611] dark:text-white text-lg font-bold leading-tight">
+                        <h2 className="text-[#181611] text-lg font-bold leading-tight">
                           {card.title}
                         </h2>
-                        <p className="text-[#897c61] dark:text-gray-300 text-sm font-normal leading-normal">
+                        <p className="text-[#897c61]  text-sm font-normal leading-normal">
                           {card.desc}
                         </p>
                       </div>
@@ -400,8 +400,8 @@ export default function Home() {
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ delay: i * 0.15 + 0.1 }}
                     >
-                      <p className="text-[#181611] dark:text-white text-lg font-bold leading-normal">{card.title}</p>
-                      <p className="text-[#897c61] dark:text-gray-300 text-sm font-normal leading-normal mt-1">{card.desc}</p>
+                      <p className="text-[#181611] text-lg font-bold leading-normal">{card.title}</p>
+                      <p className="text-[#897c61]  text-sm font-normal leading-normal mt-1">{card.desc}</p>
                     </motion.div>
                   </motion.div>
                 ))}
@@ -409,7 +409,7 @@ export default function Home() {
 
               {/* Enhanced Contact Section */}
               <motion.section
-                className="bg-gradient-to-r from-[#FCC107]/20 to-[#FFC107]/10 dark:from-[#FCC107]/10 dark:to-[#FFC107]/5 py-20 px-4 text-center relative overflow-hidden"
+                className="bg-gradient-to-r from-[#FCC107]/20 to-[#FFC107]/10 py-20 px-4 text-center relative overflow-hidden"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ amount: 0.3 }}
@@ -444,13 +444,13 @@ export default function Home() {
 
                 <div className="max-w-2xl mx-auto relative z-10">
                   <motion.h2
-                    className="text-2xl sm:text-3xl font-bold text-[#181611] dark:text-white mb-4"
+                    className="text-2xl sm:text-3xl font-bold text-[#181611] mb-4"
                     variants={scrollFadeUp}
                   >
                     Connect with Us to Source the Finest Turmeric
                   </motion.h2>
                   <motion.p
-                    className="text-[#897c61] dark:text-gray-300 mb-8"
+                    className="text-[#897c61]  mb-8"
                     variants={scrollFadeUp}
                     transition={{ delay: 0.1 }}
                   >

@@ -150,16 +150,16 @@ export default function About() {
                         >
                             <motion.div className="flex flex-col items-center gap-2 pt-3" variants={cardItem}>
                                 <motion.div
-                                    className="w-8 h-8 bg-[#6D4C41] dark:bg-[#FFC107] rounded-full flex items-center justify-center text-white font-bold text-sm"
+                                    className="w-8 h-8 bg-[#6D4C41] rounded-full flex items-center justify-center text-white font-bold text-sm"
                                     whileHover={{ scale: 1.1 }}
                                 >
                                     1
                                 </motion.div>
-                                <div className="w-0.5 bg-[#6D4C41]/20 dark:bg-[#FFC107]/30 h-full grow"></div>
+                                <div className="w-0.5 bg-[#6D4C41]/20 h-full grow"></div>
                             </motion.div>
                             <motion.div className="flex flex-1 flex-col pb-8 sm:pb-12" variants={cardItem}>
                                 <motion.p
-                                    className="text-[#6D4C41] dark:text-[#FFC107] text-sm font-bold uppercase tracking-widest font-display"
+                                    className="text-[#6D4C41]  text-sm font-bold uppercase tracking-widest font-display"
                                     variants={fadeInLeft}
                                 >
                                     2025
@@ -172,7 +172,7 @@ export default function About() {
                                     The Journey
                                 </motion.p>
                                 <motion.p
-                                    className="text-[#897c61] dark:text-[#a1967d] text-base sm:text-lg mt-2 font-body space-y-4"
+                                    className="text-[#897c61]  text-base sm:text-lg mt-2 font-body space-y-4"
                                     variants={fadeInLeft}
                                     transition={{ delay: 0.2 }}
                                 >
@@ -203,7 +203,7 @@ export default function About() {
 
                 {/* Mission, Vision & Values Section */}
                 <motion.div
-                    className="bg-[#6D4C41]/5 dark:bg-[#FFC107]/5 py-12 sm:py-16 md:py-24"
+                    className="bg-[#6D4C41]/5  py-12 sm:py-16 md:py-24"
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.2 }}
@@ -223,7 +223,7 @@ export default function About() {
                         >
                             {/* Mission Card */}
                             <motion.div
-                                className="text-center p-6 bg-[#F5F5F5] dark:bg-[#221c10] rounded-xl shadow-lg hover:shadow-xl transition-shadow"
+                                className="text-center p-6 bg-[#F5F5F5]  rounded-xl shadow-lg hover:shadow-xl transition-shadow"
                                 variants={cardItem}
                                 whileHover={{
                                     y: -8,
@@ -231,7 +231,7 @@ export default function About() {
                                 }}
                             >
                                 <motion.span
-                                    className="material-symbols-outlined text-4xl text-[#2E7D32] dark:text-[#FFC107]"
+                                    className="material-symbols-outlined text-4xl text-[#2E7D32] "
                                     whileHover={{ rotate: 360 }}
                                     transition={{ duration: 0.6 }}
                                 >
@@ -248,7 +248,7 @@ export default function About() {
 
                             {/* Vision Card */}
                             <motion.div
-                                className="text-center p-6 bg-[#F5F5F5] dark:bg-[#221c10] rounded-xl shadow-lg hover:shadow-xl transition-shadow"
+                                className="text-center p-6 bg-[#F5F5F5]  rounded-xl shadow-lg hover:shadow-xl transition-shadow"
                                 variants={cardItem}
                                 whileHover={{
                                     y: -8,
@@ -256,7 +256,7 @@ export default function About() {
                                 }}
                             >
                                 <motion.span
-                                    className="material-symbols-outlined text-4xl text-[#2E7D32] dark:text-[#FFC107]"
+                                    className="material-symbols-outlined text-4xl text-[#2E7D32] "
                                     whileHover={{ scale: 1.2 }}
                                     transition={{ duration: 0.3 }}
                                 >
@@ -274,7 +274,7 @@ export default function About() {
 
                             {/* Values Card */}
                             <motion.div
-                                className="text-center p-6 bg-[#F5F5F5] dark:bg-[#221c10] rounded-xl shadow-lg hover:shadow-xl transition-shadow"
+                                className="text-center p-6 bg-[#F5F5F5]  rounded-xl shadow-lg hover:shadow-xl transition-shadow"
                                 variants={cardItem}
                                 whileHover={{
                                     y: -8,
@@ -282,7 +282,7 @@ export default function About() {
                                 }}
                             >
                                 <motion.span
-                                    className="material-symbols-outlined text-4xl text-[#2E7D32] dark:text-[#FFC107]"
+                                    className="material-symbols-outlined text-4xl text-[#2E7D32] "
                                     whileHover={{ scale: 1.1, rotate: -10 }}
                                     transition={{ duration: 0.3 }}
                                 >
@@ -302,7 +302,7 @@ export default function About() {
 
                 {/* Certificates Section - Better Spacing */}
                 <motion.div
-                    className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-10 lg:px-20 bg-white dark:bg-[#2c2416]"
+                    className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-10 lg:px-20 bg-white "
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.2 }}
@@ -323,7 +323,7 @@ export default function About() {
                             {certificates.map((cert, index) => (
                                 <motion.div
                                     key={index}
-                                    className="text-center p-6 bg-[#F5F5F5] dark:bg-[#221c10] rounded-xl shadow-lg border border-[#FFC107]/20 flex flex-col h-full"
+                                    className="text-center p-6 bg-[#F5F5F5]  rounded-xl shadow-lg border border-[#FFC107]/20 flex flex-col h-full"
                                     variants={cardItem}
                                     whileHover={{
                                         y: -2,
@@ -337,12 +337,12 @@ export default function About() {
                                     </div>
 
                                     {/* Title */}
-                                    <h3 className="text-xl sm:text-2xl font-bold mb-3 font-display text-[#6D4C41] dark:text-[#FFC107]">
+                                    <h3 className="text-xl sm:text-2xl font-bold mb-3 font-display text-[#6D4C41] ">
                                         {cert.name}
                                     </h3>
 
                                     {/* Description - Takes available space */}
-                                    <p className="text-[#5D4037] dark:text-gray-300 text-sm mb-8 font-body leading-relaxed flex-grow">
+                                    <p className="text-[#5D4037]  text-sm mb-8 font-body leading-relaxed flex-grow">
                                         {cert.description}
                                     </p>
 
@@ -433,7 +433,7 @@ export default function About() {
 
                 {/* CTA Section */}
                 <motion.div
-                    className="bg-[#6D4C41] text-white dark:bg-[#FFC107] dark:text-[#6D4C41] py-12 sm:py-16 md:py-24"
+                    className="bg-[#6D4C41] text-white py-12 sm:py-16 md:py-24"
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.3 }}

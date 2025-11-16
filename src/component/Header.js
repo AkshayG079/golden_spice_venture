@@ -117,7 +117,7 @@ export default function Header() {
 
   return (
     <motion.header
-      className="sticky top-0 z-50 bg-[#F5F5F5] dark:bg-[#221c10] shadow-sm border-b border-[#e6e2db] dark:border-[#3a3324]"
+      className="sticky top-0 z-50 bg-[#F5F5F5]  shadow-sm border-b border-[#e6e2db] "
       initial="hidden"
       animate="visible"
       variants={headerVariants}
@@ -144,7 +144,7 @@ export default function Header() {
             />
           </motion.div>
           <motion.h2 
-            className="text-lg sm:text-xl font-bold text-[#6D4C41] dark:text-[#F5F5F5]"
+            className="text-lg sm:text-xl font-bold text-[#6D4C41] "
             transition={{ duration: 0.2 }}
           >
             Golden Spices Venture
@@ -190,7 +190,7 @@ export default function Header() {
 
         {/* Mobile Hamburger */}
         <motion.button
-          className="md:hidden p-2 rounded-md text-[#6D4C41] dark:text-white"
+          className="md:hidden p-2 rounded-md text-[#6D4C41] "
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           variants={hamburgerVariants}
           initial="closed"
@@ -208,7 +208,7 @@ export default function Header() {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            className="md:hidden bg-[#F5F5F5] dark:bg-[#221c10] border-t border-[#e6e2db] dark:border-[#3a3324] shadow-md overflow-hidden"
+            className="md:hidden bg-[#F5F5F5]  border-t border-[#e6e2db] shadow-md overflow-hidden"
             variants={mobileMenuVariants}
             initial="closed"
             animate="open"
@@ -228,8 +228,8 @@ export default function Header() {
                     href={link.href}
                     className={`block text-sm font-medium py-3 px-4 rounded-lg transition-all ${
                       pathname === link.href
-                        ? "text-[#2E7D32] font-bold bg-[#e6f4ea] dark:bg-[#1b5e20] shadow-sm"
-                        : "text-[#6D4C41] dark:text-gray-300 hover:text-[#2E7D32] hover:bg-[#f0f0f0] dark:hover:bg-[#332b1a]"
+                        ? "text-[#2E7D32] font-bold bg-[#e6f4ea]  shadow-sm"
+                        : "text-[#6D4C41]  hover:text-[#2E7D32] hover:bg-[#f0f0f0] "
                     }`}
                     onClick={() => setMobileMenuOpen(false)}
                   >

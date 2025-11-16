@@ -119,7 +119,7 @@ export default function About() {
                         variants={fadeInUp}
                     >
                         <motion.h2 
-                            className="text-[#181611] dark:text-white text-xl sm:text-2xl font-bold leading-tight px-4 pb-3 pt-5"
+                            className="text-[#181611]  text-xl sm:text-2xl font-bold leading-tight px-4 pb-3 pt-5"
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true }}
@@ -142,8 +142,8 @@ export default function About() {
                                 <div className="w-1 bg-[#FFC107] flex-1 mt-2"></div>
                             </motion.div>
                             <motion.div className="pb-6" variants={cardItem}>
-                                <h3 className="font-bold text-[#181611] dark:text-white">Sourcing</h3>
-                                <p className="text-[#897c61] dark:text-gray-300 mt-1">
+                                <h3 className="font-bold text-[#181611] ">Sourcing</h3>
+                                <p className="text-[#897c61]  mt-1">
                                     Directly from trusted farms with quality assurance.
                                 </p>
                             </motion.div>
@@ -156,8 +156,8 @@ export default function About() {
                                 <div className="w-1 bg-[#FFC107] flex-1 mt-2"></div>
                             </motion.div>
                             <motion.div className="pb-6" variants={cardItem}>
-                                <h3 className="font-bold text-[#181611] dark:text-white">Processing</h3>
-                                <p className="text-[#897c61] dark:text-gray-300 mt-1">
+                                <h3 className="font-bold text-[#181611] ">Processing</h3>
+                                <p className="text-[#897c61]  mt-1">
                                     State-of-the-art facilities ensuring purity and quality.
                                 </p>
                             </motion.div>
@@ -170,8 +170,8 @@ export default function About() {
                                 <div className="w-1 bg-[#FFC107] flex-1 mt-2"></div>
                             </motion.div>
                             <motion.div className="pb-6" variants={cardItem}>
-                                <h3 className="font-bold text-[#181611] dark:text-white">Export</h3>
-                                <p className="text-[#897c61] dark:text-gray-300 mt-1">
+                                <h3 className="font-bold text-[#181611] ">Export</h3>
+                                <p className="text-[#897c61]  mt-1">
                                     Efficient logistics network for global delivery.
                                 </p>
                             </motion.div>
@@ -187,7 +187,7 @@ export default function About() {
                         variants={fadeInUp}
                     >
                         <motion.h2 
-                            className="text-[#181611] dark:text-white text-xl sm:text-2xl font-bold px-4 pb-3 pt-5"
+                            className="text-[#181611]  text-xl sm:text-2xl font-bold px-4 pb-3 pt-5"
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true }}
@@ -258,7 +258,7 @@ export default function About() {
                         variants={fadeInUp}
                     >
                         <motion.h2 
-                            className="text-[#181611] dark:text-white text-xl sm:text-2xl font-bold mb-6"
+                            className="text-[#181611]  text-xl sm:text-2xl font-bold mb-6"
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true }}
@@ -321,7 +321,7 @@ export default function About() {
 
                     {/* CTA */}
                     <motion.div 
-                        className="bg-[#FFC107]/20 dark:bg-[#FFC107]/10 mt-10 sm:mt-16 p-6 sm:p-8 rounded-lg mx-4"
+                        className="bg-[#FFC107]/20 mt-10 sm:mt-16 p-6 sm:p-8 rounded-lg mx-4"
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, amount: 0.3 }}
@@ -329,7 +329,7 @@ export default function About() {
                     >
                         <div className="text-center max-w-2xl mx-auto">
                             <motion.h2 
-                                className="text-xl sm:text-2xl font-bold text-[#181611] dark:text-white mb-4"
+                                className="text-xl sm:text-2xl font-bold text-[#181611]  mb-4"
                                 initial="hidden"
                                 whileInView="visible"
                                 viewport={{ once: true }}
@@ -338,7 +338,7 @@ export default function About() {
                                 Ready to Export With Us?
                             </motion.h2>
                             <motion.p 
-                                className="text-[#897c61] dark:text-gray-300 mb-6 text-sm sm:text-base"
+                                className="text-[#897c61]  mb-6 text-sm sm:text-base"
                                 initial="hidden"
                                 whileInView="visible"
                                 viewport={{ once: true }}
