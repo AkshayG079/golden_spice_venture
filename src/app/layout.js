@@ -1,7 +1,11 @@
 import "./globals.css";
+import { Toaster } from "react-hot-toast";
 
 export const metadata = {
   title: "Golden Spice Venture",
+  icons: {
+    icon: "/favicon.ico",
+  },cd
 };
 
 export default function RootLayout({ children }) {
@@ -32,7 +36,11 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
       </head>
-      <body>{children}</body>
+
+      <body>
+        <Toaster position="top-right" />
+        {children}
+      </body>
     </html>
   );
 }

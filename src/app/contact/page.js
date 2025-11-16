@@ -1,11 +1,10 @@
 "use client";
-import Image from "next/image";
-import Link from "next/link";
 import { useState } from "react";
 import emailjs from "emailjs-com";
 import Header from "@/component/Header";
 import WhatsAppFloat from "@/component/WhatsAppFloat";
 import { motion } from "framer-motion";
+import toast from "react-hot-toast";
 
 export default function Contact() {
     const [formData, setFormData] = useState({
@@ -20,8 +19,8 @@ export default function Contact() {
     // Animation variants optimized for mobile
     const fadeInUp = {
         hidden: { opacity: 0, y: 30 },
-        visible: { 
-            opacity: 1, 
+        visible: {
+            opacity: 1,
             y: 0,
             transition: { duration: 0.6, ease: "easeOut" }
         }
@@ -29,8 +28,8 @@ export default function Contact() {
 
     const fadeInLeft = {
         hidden: { opacity: 0, x: -30 },
-        visible: { 
-            opacity: 1, 
+        visible: {
+            opacity: 1,
             x: 0,
             transition: { duration: 0.6, ease: "easeOut" }
         }
@@ -38,19 +37,10 @@ export default function Contact() {
 
     const fadeInRight = {
         hidden: { opacity: 0, x: 30 },
-        visible: { 
-            opacity: 1, 
+        visible: {
+            opacity: 1,
             x: 0,
             transition: { duration: 0.6, ease: "easeOut" }
-        }
-    };
-
-    const scaleIn = {
-        hidden: { opacity: 0, scale: 0.95 },
-        visible: { 
-            opacity: 1, 
-            scale: 1,
-            transition: { duration: 0.5, ease: "backOut" }
         }
     };
 
@@ -91,19 +81,23 @@ export default function Contact() {
         e.preventDefault();
         setIsSubmitting(true);
 
+        console.log("PUBLIC KEY:", process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY);
+        console.log("NEXT_PUBLIC_SERVICE_ID KEY:", process.env.NEXT_PUBLIC_SERVICE_ID);
+        console.log("NEXT_PUBLIC_TEMPLATE_ID KEY:", process.env.NEXT_PUBLIC_TEMPLATE_ID);
+
         try {
             await emailjs.send(
-                "service_hnpq3cb",
-                "template_0zpjwmx",
+                process.env.NEXT_PUBLIC_SERVICE_ID,
+                process.env.NEXT_PUBLIC_TEMPLATE_ID,
                 formData,
-                "2S7HfL582aL8B9S70"
+                process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
             );
-            
-            alert("✅ Message sent successfully!");
+
+            toast.success("Message sent successfully!");
             setFormData({ name: "", email: "", subject: "", message: "" });
         } catch (error) {
-            console.error(error);
-            alert("❌ Failed to send message. Try again later.");
+            console.log(error)
+            toast.error("Failed to send message. Try again later.");
         } finally {
             setIsSubmitting(false);
         }
@@ -112,30 +106,30 @@ export default function Contact() {
     return (
         <div className="bg-[#F5F5F5] min-h-screen">
             <Header />
-            
+
             <main className="flex-1 px-4 sm:px-6 lg:px-8 py-6 md:py-10">
                 {/* Fixed container with proper width constraints */}
                 <div className="flex flex-col w-full max-w-7xl mx-auto"> {/* Changed to max-w-7xl and removed max-w-full */}
 
                     {/* Heading Section */}
-                    <motion.div 
+                    <motion.div
                         className="flex flex-col gap-4 p-2 sm:p-4 w-full"
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, amount: 0.1 }}
                         variants={fadeInUp}
                     >
-                        <motion.div 
+                        <motion.div
                             className="flex flex-col gap-3 w-full"
                             variants={staggerContainer}
                         >
-                            <motion.h1 
+                            <motion.h1
                                 className="text-[#6D4C41] dark:text-[#FFC107] text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black leading-tight tracking-tight text-center sm:text-left"
                                 variants={fadeInUp}
                             >
                                 Let's Connect
                             </motion.h1>
-                            <motion.p 
+                            <motion.p
                                 className="text-[#897c61] dark:text-[#a1967d] text-sm sm:text-base font-normal leading-relaxed max-w-full sm:max-w-lg text-center sm:text-left"
                                 variants={fadeInUp}
                                 transition={{ delay: 0.1 }}
@@ -147,7 +141,7 @@ export default function Contact() {
                     </motion.div>
 
                     {/* Grid Layout - Fixed width issues */}
-                    <motion.div 
+                    <motion.div
                         className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 mt-4 md:mt-6 w-full"
                         initial="hidden"
                         whileInView="visible"
@@ -156,30 +150,30 @@ export default function Contact() {
                     >
 
                         {/* Contact Information */}
-                        <motion.div 
+                        <motion.div
                             className="flex flex-col gap-4 md:gap-6 w-full"
                             variants={fadeInLeft}
                         >
-                            <motion.h2 
+                            <motion.h2
                                 className="text-lg sm:text-xl md:text-2xl font-bold text-[#6D4C41] dark:text-[#FFC107] text-center sm:text-left"
                                 variants={fadeInLeft}
                             >
                                 Contact Information
                             </motion.h2>
 
-                            <motion.div 
+                            <motion.div
                                 className="space-y-3 md:space-y-4 w-full"
                                 variants={staggerContainer}
                             >
                                 {/* Email */}
-                                <motion.div 
+                                <motion.div
                                     className="flex items-start gap-3 p-3 bg-white dark:bg-[#2c2416] rounded-lg shadow-sm w-full"
                                     variants={cardItem}
                                     whileHover={{ x: 5, transition: { duration: 0.2 } }}
                                 >
-                                    <motion.div 
+                                    <motion.div
                                         className="rounded-full bg-[#FFC107]/20 dark:bg-[#FFC107]/30 p-2 flex-shrink-0 mt-0.5"
-                                        whileHover={{ 
+                                        whileHover={{
                                             scale: 1.05,
                                             transition: { duration: 0.2 }
                                         }}
@@ -201,14 +195,14 @@ export default function Contact() {
                                 </motion.div>
 
                                 {/* Phone */}
-                                <motion.div 
+                                <motion.div
                                     className="flex items-start gap-3 p-3 bg-white dark:bg-[#2c2416] rounded-lg shadow-sm w-full"
                                     variants={cardItem}
                                     whileHover={{ x: 5, transition: { duration: 0.2, delay: 0.05 } }}
                                 >
-                                    <motion.div 
+                                    <motion.div
                                         className="rounded-full bg-[#FFC107]/20 dark:bg-[#FFC107]/30 p-2 flex-shrink-0 mt-0.5"
-                                        whileHover={{ 
+                                        whileHover={{
                                             scale: 1.05,
                                             transition: { duration: 0.2 }
                                         }}
@@ -230,14 +224,14 @@ export default function Contact() {
                                 </motion.div>
 
                                 {/* Address */}
-                                <motion.div 
+                                <motion.div
                                     className="flex items-start gap-3 p-3 bg-white dark:bg-[#2c2416] rounded-lg shadow-sm w-full"
                                     variants={cardItem}
                                     whileHover={{ x: 5, transition: { duration: 0.2, delay: 0.1 } }}
                                 >
-                                    <motion.div 
+                                    <motion.div
                                         className="rounded-full bg-[#FFC107]/20 dark:bg-[#FFC107]/30 p-2 flex-shrink-0 mt-0.5"
-                                        whileHover={{ 
+                                        whileHover={{
                                             scale: 1.05,
                                             transition: { duration: 0.2 }
                                         }}
@@ -257,12 +251,12 @@ export default function Contact() {
                         </motion.div>
 
                         {/* Contact Form */}
-                        <motion.div 
+                        <motion.div
                             className="bg-white dark:bg-[#2c2416] p-4 sm:p-6 md:p-6 rounded-xl shadow-lg w-full"
                             variants={fadeInRight}
                         >
-                            <motion.form 
-                                onSubmit={handleSubmit} 
+                            <motion.form
+                                onSubmit={handleSubmit}
                                 className="space-y-3 md:space-y-4 w-full"
                                 variants={staggerContainer}
                             >
@@ -356,7 +350,7 @@ export default function Contact() {
                                         type="submit"
                                         disabled={isSubmitting}
                                         className="w-full flex justify-center items-center py-2 sm:py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm sm:text-base font-bold text-white bg-[#E65100] hover:bg-[#ff6f00] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#E65100] transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
-                                        whileHover={{ 
+                                        whileHover={{
                                             scale: isSubmitting ? 1 : 1.01,
                                         }}
                                         whileTap={{ scale: 0.98 }}
@@ -386,11 +380,12 @@ export default function Contact() {
                 viewport={{ once: true, amount: 0.1 }}
                 variants={fadeInUp}
             >
-                <motion.p 
+                <motion.p
                     className="text-xs sm:text-sm text-[#897c61] dark:text-[#a1967d]"
                     variants={fadeInUp}
                 >
-                    © 2025 Golden Spice Venture All Rights Reserved.
+                    © {new Date().getFullYear()} Golden Spice Venture — All Rights Reserved.
+
                 </motion.p>
             </motion.footer>
 

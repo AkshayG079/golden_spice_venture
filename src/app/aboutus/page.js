@@ -9,8 +9,8 @@ export default function About() {
     // Animation variants
     const fadeInUp = {
         hidden: { opacity: 0, y: 60 },
-        visible: { 
-            opacity: 1, 
+        visible: {
+            opacity: 1,
             y: 0,
             transition: { duration: 0.8, ease: "easeOut" }
         }
@@ -18,8 +18,8 @@ export default function About() {
 
     const fadeInLeft = {
         hidden: { opacity: 0, x: -60 },
-        visible: { 
-            opacity: 1, 
+        visible: {
+            opacity: 1,
             x: 0,
             transition: { duration: 0.8, ease: "easeOut" }
         }
@@ -27,8 +27,8 @@ export default function About() {
 
     const fadeInRight = {
         hidden: { opacity: 0, x: 60 },
-        visible: { 
-            opacity: 1, 
+        visible: {
+            opacity: 1,
             x: 0,
             transition: { duration: 0.8, ease: "easeOut" }
         }
@@ -36,8 +36,8 @@ export default function About() {
 
     const scaleIn = {
         hidden: { opacity: 0, scale: 0.9 },
-        visible: { 
-            opacity: 1, 
+        visible: {
+            opacity: 1,
             scale: 1,
             transition: { duration: 0.6, ease: "backOut" }
         }
@@ -72,10 +72,31 @@ export default function About() {
         }
     };
 
+    const certificates = [
+        {
+            name: "Business License",
+            file: "/doc/License.pdf",
+            icon: "📄",
+            description: "Official business registration and license documents"
+        },
+        {
+            name: "GST Certificate",
+            file: "/doc/Gst.pdf",
+            icon: "🏢",
+            description: "Goods and Services Tax registration certificate"
+        },
+        {
+            name: "FSSAI Certificate",
+            file: "/doc/fssai.pdf",
+            icon: "🍃",
+            description: "Food Safety and Standards Authority of India certification"
+        }
+    ];
+
     return (
         <div className="bg-[#F5F5F5]">
             <Header />
-            
+
             <main className="flex-1">
                 {/* Hero Section */}
                 <motion.div
@@ -92,17 +113,17 @@ export default function About() {
                         }}
                         variants={scaleIn}
                     >
-                        <motion.div 
+                        <motion.div
                             className="flex flex-col gap-4 text-center max-w-3xl px-4"
                             variants={staggerContainer}
                         >
-                            <motion.h1 
+                            <motion.h1
                                 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight font-display"
                                 variants={fadeInUp}
                             >
                                 From Our Farms to Your Table: The Story of Golden Spice Venture
                             </motion.h1>
-                            <motion.h2 
+                            <motion.h2
                                 className="text-white text-base sm:text-lg md:text-xl font-normal leading-normal font-body"
                                 variants={fadeInUp}
                                 transition={{ delay: 0.2 }}
@@ -115,7 +136,7 @@ export default function About() {
                 </motion.div>
 
                 {/* Journey Section */}
-                <motion.div 
+                <motion.div
                     className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-10 lg:px-20"
                     initial="hidden"
                     whileInView="visible"
@@ -123,12 +144,12 @@ export default function About() {
                     variants={fadeInUp}
                 >
                     <div className="max-w-4xl mx-auto">
-                        <motion.div 
+                        <motion.div
                             className="grid grid-cols-[40px_1fr] gap-x-4 md:gap-x-8"
                             variants={staggerContainer}
                         >
                             <motion.div className="flex flex-col items-center gap-2 pt-3" variants={cardItem}>
-                                <motion.div 
+                                <motion.div
                                     className="w-8 h-8 bg-[#6D4C41] dark:bg-[#FFC107] rounded-full flex items-center justify-center text-white font-bold text-sm"
                                     whileHover={{ scale: 1.1 }}
                                 >
@@ -137,20 +158,20 @@ export default function About() {
                                 <div className="w-0.5 bg-[#6D4C41]/20 dark:bg-[#FFC107]/30 h-full grow"></div>
                             </motion.div>
                             <motion.div className="flex flex-1 flex-col pb-8 sm:pb-12" variants={cardItem}>
-                                <motion.p 
+                                <motion.p
                                     className="text-[#6D4C41] dark:text-[#FFC107] text-sm font-bold uppercase tracking-widest font-display"
                                     variants={fadeInLeft}
                                 >
                                     2025
                                 </motion.p>
-                                <motion.p 
+                                <motion.p
                                     className="text-xl sm:text-2xl font-bold font-display mt-1"
                                     variants={fadeInLeft}
                                     transition={{ delay: 0.1 }}
                                 >
                                     The Journey
                                 </motion.p>
-                                <motion.p 
+                                <motion.p
                                     className="text-[#897c61] dark:text-[#a1967d] text-base sm:text-lg mt-2 font-body space-y-4"
                                     variants={fadeInLeft}
                                     transition={{ delay: 0.2 }}
@@ -181,7 +202,7 @@ export default function About() {
                 </motion.div>
 
                 {/* Mission, Vision & Values Section */}
-                <motion.div 
+                <motion.div
                     className="bg-[#6D4C41]/5 dark:bg-[#FFC107]/5 py-12 sm:py-16 md:py-24"
                     initial="hidden"
                     whileInView="visible"
@@ -189,27 +210,27 @@ export default function About() {
                     variants={fadeInUp}
                 >
                     <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-10 lg:px-20">
-                        <motion.h2 
+                        <motion.h2
                             className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12 font-display"
                             variants={fadeInUp}
                         >
                             Our Mission, Vision and Values
                         </motion.h2>
 
-                        <motion.div 
+                        <motion.div
                             className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8"
                             variants={staggerContainer}
                         >
                             {/* Mission Card */}
-                            <motion.div 
+                            <motion.div
                                 className="text-center p-6 bg-[#F5F5F5] dark:bg-[#221c10] rounded-xl shadow-lg hover:shadow-xl transition-shadow"
                                 variants={cardItem}
-                                whileHover={{ 
+                                whileHover={{
                                     y: -8,
                                     transition: { duration: 0.3 }
                                 }}
                             >
-                                <motion.span 
+                                <motion.span
                                     className="material-symbols-outlined text-4xl text-[#2E7D32] dark:text-[#FFC107]"
                                     whileHover={{ rotate: 360 }}
                                     transition={{ duration: 0.6 }}
@@ -226,15 +247,15 @@ export default function About() {
                             </motion.div>
 
                             {/* Vision Card */}
-                            <motion.div 
+                            <motion.div
                                 className="text-center p-6 bg-[#F5F5F5] dark:bg-[#221c10] rounded-xl shadow-lg hover:shadow-xl transition-shadow"
                                 variants={cardItem}
-                                whileHover={{ 
+                                whileHover={{
                                     y: -8,
                                     transition: { duration: 0.3, delay: 0.1 }
                                 }}
                             >
-                                <motion.span 
+                                <motion.span
                                     className="material-symbols-outlined text-4xl text-[#2E7D32] dark:text-[#FFC107]"
                                     whileHover={{ scale: 1.2 }}
                                     transition={{ duration: 0.3 }}
@@ -252,15 +273,15 @@ export default function About() {
                             </motion.div>
 
                             {/* Values Card */}
-                            <motion.div 
+                            <motion.div
                                 className="text-center p-6 bg-[#F5F5F5] dark:bg-[#221c10] rounded-xl shadow-lg hover:shadow-xl transition-shadow"
                                 variants={cardItem}
-                                whileHover={{ 
+                                whileHover={{
                                     y: -8,
                                     transition: { duration: 0.3, delay: 0.2 }
                                 }}
                             >
-                                <motion.span 
+                                <motion.span
                                     className="material-symbols-outlined text-4xl text-[#2E7D32] dark:text-[#FFC107]"
                                     whileHover={{ scale: 1.1, rotate: -10 }}
                                     transition={{ duration: 0.3 }}
@@ -279,22 +300,105 @@ export default function About() {
                     </div>
                 </motion.div>
 
+                {/* Certificates Section - Better Spacing */}
+                <motion.div
+                    className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-10 lg:px-20 bg-white dark:bg-[#2c2416]"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.2 }}
+                    variants={fadeInUp}
+                >
+                    <div className="max-w-6xl mx-auto">
+                        <motion.h2
+                            className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12 font-display"
+                            variants={fadeInUp}
+                        >
+                            Our Certifications & Documents
+                        </motion.h2>
+
+                        <motion.div
+                            className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10"
+                            variants={staggerContainer}
+                        >
+                            {certificates.map((cert, index) => (
+                                <motion.div
+                                    key={index}
+                                    className="text-center p-6 bg-[#F5F5F5] dark:bg-[#221c10] rounded-xl shadow-lg border border-[#FFC107]/20 flex flex-col h-full"
+                                    variants={cardItem}
+                                    whileHover={{
+                                        y: -2,
+                                        boxShadow: "0 8px 25px rgba(0,0,0,0.1)",
+                                        transition: { duration: 0.2 }
+                                    }}
+                                >
+                                    {/* Icon */}
+                                    <div className="w-16 h-16 bg-[#FFC107]/20 rounded-full flex items-center justify-center mb-5 text-2xl mx-auto">
+                                        {cert.icon}
+                                    </div>
+
+                                    {/* Title */}
+                                    <h3 className="text-xl sm:text-2xl font-bold mb-3 font-display text-[#6D4C41] dark:text-[#FFC107]">
+                                        {cert.name}
+                                    </h3>
+
+                                    {/* Description - Takes available space */}
+                                    <p className="text-[#5D4037] dark:text-gray-300 text-sm mb-8 font-body leading-relaxed flex-grow">
+                                        {cert.description}
+                                    </p>
+
+                                    {/* Buttons - Always at bottom */}
+                                    <div className="flex gap-3 justify-center pt-4">
+                                        {/* View Button - Green for positive action */}
+                                        <motion.a
+                                            href={cert.file}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="inline-flex items-center gap-2 px-4 py-2.5 bg-[#388E3C] text-white rounded-lg hover:bg-[#2E7D32] transition-colors text-sm font-medium shadow-sm"
+                                            whileHover={{ scale: 1.03 }}
+                                            whileTap={{ scale: 0.97 }}
+                                        >
+                                            <span className="material-symbols-outlined text-lg">
+                                                visibility
+                                            </span>
+                                            View
+                                        </motion.a>
+
+                                        {/* Download Button - Orange for primary action */}
+                                        <motion.a
+                                            href={cert.file}
+                                            download
+                                            className="inline-flex items-center gap-2 px-3 py-2 bg-[#6D4C41] text-white rounded-lg hover:bg-[#50403a] transition-colors text-xs font-medium min-w-[80px] justify-center"
+                                            whileHover={{ scale: 1.02 }}
+                                            whileTap={{ scale: 0.98 }}
+                                        >
+                                            <span className="material-symbols-outlined text-base">
+                                                download
+                                            </span>
+                                            Download
+                                        </motion.a>
+                                    </div>
+                                </motion.div>
+                            ))}
+                        </motion.div>
+                    </div>
+                </motion.div>
+
                 {/* Gallery Section */}
-                <motion.div 
+                <motion.div
                     className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-10 lg:px-20"
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.2 }}
                     variants={fadeInUp}
                 >
-                    <motion.h2 
+                    <motion.h2
                         className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12 font-display"
                         variants={fadeInUp}
                     >
                         Our Gallery
                     </motion.h2>
 
-                    <motion.div 
+                    <motion.div
                         className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4"
                         variants={staggerContainer}
                     >
@@ -328,7 +432,7 @@ export default function About() {
                 </motion.div>
 
                 {/* CTA Section */}
-                <motion.div 
+                <motion.div
                     className="bg-[#6D4C41] text-white dark:bg-[#FFC107] dark:text-[#6D4C41] py-12 sm:py-16 md:py-24"
                     initial="hidden"
                     whileInView="visible"
@@ -336,28 +440,28 @@ export default function About() {
                     variants={scaleIn}
                 >
                     <div className="max-w-4xl mx-auto px-4 sm:px-6 md:px-10 lg:px-20 text-center">
-                        <motion.h2 
+                        <motion.h2
                             className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 font-display"
                             variants={fadeInUp}
                         >
                             Ready to Experience the Golden Spice?
                         </motion.h2>
-                        <motion.p 
+                        <motion.p
                             className="text-base sm:text-lg mb-6 sm:mb-8 font-body"
                             variants={fadeInUp}
                             transition={{ delay: 0.1 }}
                         >
                             Explore our range of premium turmeric products or get in touch to learn more about partnering with us.
                         </motion.p>
-                        <motion.div 
+                        <motion.div
                             className="flex flex-col sm:flex-row justify-center gap-4"
                             variants={fadeInUp}
                             transition={{ delay: 0.2 }}
                         >
                             <Link href="/contact">
-                                <motion.button 
+                                <motion.button
                                     className="flex min-w-[120px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-[#F5F5F5] text-[#6D4C41] font-bold text-base leading-normal tracking-[0.015em] font-display hover:bg-[#F5F5F5]/90 transition-colors"
-                                    whileHover={{ 
+                                    whileHover={{
                                         scale: 1.05,
                                         boxShadow: "0 10px 25px rgba(0,0,0,0.2)"
                                     }}

@@ -56,7 +56,7 @@ export default function Footer() {
             </div>
 
             <div className="mt-8 pt-8 border-t border-[#FCC107]/20 text-center text-sm text-[#897c61] dark:text-gray-300">
-                © 2025 Golden Spice Venture All Rights Reserved.
+                © {new Date().getFullYear()} Golden Spice Venture — All Rights Reserved.
             </div>
         </footer>
     );
