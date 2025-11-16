@@ -1,11 +1,12 @@
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
 
+
 export const metadata = {
   title: "Golden Spice Venture",
   icons: {
-    icon: "/favicon.ico",
-  },cd
+    icon: "/icons/favicon.ico",
+  }
 };
 
 export default function RootLayout({ children }) {
