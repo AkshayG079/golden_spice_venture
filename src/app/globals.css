@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Work Sans", "Noto Sans", sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24;
+}
