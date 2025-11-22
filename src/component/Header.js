@@ -5,6 +5,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X } from "lucide-react";
 
 export default function Header() {
   const pathname = usePathname();
@@ -25,9 +26,9 @@ export default function Header() {
       opacity: 1,
       transition: {
         duration: 0.6,
-        ease: "easeOut"
-      }
-    }
+        ease: "easeOut",
+      },
+    },
   };
 
   const logoVariants = {
@@ -39,10 +40,9 @@ export default function Header() {
         type: "spring",
         stiffness: 200,
         damping: 15,
-        duration: 0.8
-      }
+        duration: 0.8,
+      },
     },
-
   };
 
   const navItemVariants = {
@@ -53,16 +53,16 @@ export default function Header() {
       transition: {
         delay: i * 0.1 + 0.3,
         duration: 0.5,
-        ease: "easeOut"
-      }
+        ease: "easeOut",
+      },
     }),
     hover: {
       y: -2,
       transition: {
         duration: 0.2,
-        ease: "easeOut"
-      }
-    }
+        ease: "easeOut",
+      },
+    },
   };
 
   const mobileMenuVariants = {
@@ -71,17 +71,17 @@ export default function Header() {
       height: 0,
       transition: {
         duration: 0.3,
-        ease: "easeInOut"
-      }
+        ease: "easeInOut",
+      },
     },
     open: {
       opacity: 1,
       height: "auto",
       transition: {
         duration: 0.4,
-        ease: "easeOut"
-      }
-    }
+        ease: "easeOut",
+      },
+    },
   };
 
   const mobileNavItemVariants = {
@@ -92,16 +92,16 @@ export default function Header() {
       transition: {
         delay: i * 0.1,
         duration: 0.3,
-        ease: "easeOut"
-      }
-    })
+        ease: "easeOut",
+      },
+    }),
   };
 
   const hamburgerVariants = {
     closed: { rotate: 0 },
     open: { rotate: 90 },
     hover: { scale: 1.1 },
-    tap: { scale: 0.9 }
+    tap: { scale: 0.9 },
   };
 
   const underlineVariants = {
@@ -110,9 +110,9 @@ export default function Header() {
       width: "100%",
       transition: {
         duration: 0.3,
-        ease: "easeOut"
-      }
-    }
+        ease: "easeOut",
+      },
+    },
   };
 
   return (
@@ -124,14 +124,14 @@ export default function Header() {
     >
       <div className="flex items-center justify-between px-4 sm:px-6 lg:px-20 py-2">
         {/* Logo + Company Name */}
-        <motion.div 
+        <motion.div
           className="flex items-center gap-3 sm:gap-4"
           variants={logoVariants}
           initial="hidden"
           animate="visible"
           whileHover="hover"
         >
-          <motion.div 
+          <motion.div
             className="relative w-12 h-12 sm:w-16 sm:h-16"
             transition={{ duration: 0.6, ease: "easeInOut" }}
           >
@@ -143,7 +143,7 @@ export default function Header() {
               priority
             />
           </motion.div>
-          <motion.h2 
+          <motion.h2
             className="text-lg sm:text-xl font-bold text-[#6D4C41] "
             transition={{ duration: 0.2 }}
           >
@@ -152,7 +152,7 @@ export default function Header() {
         </motion.div>
 
         {/* Desktop Navigation */}
-        <motion.nav 
+        <motion.nav
           className="hidden md:flex gap-8 lg:gap-10"
           initial="hidden"
           animate="visible"
@@ -198,9 +198,10 @@ export default function Header() {
           whileHover="hover"
           whileTap="tap"
         >
-          <span className="material-symbols-outlined text-2xl">
+          {/* <span className="material-symbols-outlined text-2xl">
             {mobileMenuOpen ? "close" : "menu"}
-          </span>
+          </span> */}
+          {mobileMenuOpen ? <X size={26} /> : <Menu size={26} />}
         </motion.button>
       </div>
 
@@ -214,7 +215,7 @@ export default function Header() {
             animate="open"
             exit="closed"
           >
-            <motion.nav 
+            <motion.nav
               className="flex flex-col gap-1 px-4 py-4"
               variants={staggerContainer}
             >
@@ -255,13 +256,13 @@ const staggerContainer = {
   open: {
     transition: {
       staggerChildren: 0.1,
-      delayChildren: 0.2
-    }
+      delayChildren: 0.2,
+    },
   },
   closed: {
     transition: {
       staggerChildren: 0.05,
-      staggerDirection: -1
-    }
-  }
+      staggerDirection: -1,
+    },
+  },
 };
