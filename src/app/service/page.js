@@ -356,7 +356,7 @@ export default function About() {
                   viewport={{ once: true }}
                   variants={fadeInUp}
                 >
-                  Ready to Export With Us?
+                  Ready to Import With Us?
                 </motion.h2>
                 <motion.p
                   className="text-[#897c61]  mb-6 text-sm sm:text-base"
