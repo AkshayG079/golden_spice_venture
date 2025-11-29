@@ -40,11 +40,12 @@ export default function WhatsAppFloat() {
         >
           <div className="relative w-8 h-8">
             <Image
-              src="/img/whatsapp icon.png"
+              src="/img/whatsapp_icon.png"
               alt="WhatsApp"
               fill
               className="object-contain"
               priority
+              unoptimized
             />
           </div>
         </motion.div>

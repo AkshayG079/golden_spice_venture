@@ -13,9 +13,9 @@ export default function Header() {
 
   const navLinks = [
     { name: "Home", href: "/" },
-    { name: "Our Services", href: "/service" },
-    { name: "About Us", href: "/aboutus" },
-    { name: "Contact Us", href: "/contact" },
+    { name: "Our Services", href: "/service/" },
+    { name: "About Us", href: "/aboutus/" },
+    { name: "Contact Us", href: "/contact/" },
   ];
 
   // Animation variants
@@ -141,13 +141,14 @@ export default function Header() {
               fill
               className="object-contain"
               priority
+              unoptimized
             />
           </motion.div>
           <motion.h2
-            className="text-lg sm:text-xl font-bold text-[#6D4C41] "
+            className="text-lg sm:text-xl font-bold text-[#6D4C41]"
             transition={{ duration: 0.2 }}
           >
-            Golden Spices Venture
+            Golden Spice Venture
           </motion.h2>
         </motion.div>
 
