@@ -360,7 +360,7 @@ export default function AboutusClient() {
               </motion.h2>
 
               <motion.div
-                className="grid grid-cols-1 md:grid-cols-4 gap-8 sm:gap-10"
+                className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10"
                 variants={staggerContainer}
               >
                 {certificates.map((cert, index) => (
