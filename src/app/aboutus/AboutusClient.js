@@ -94,7 +94,7 @@ export default function AboutusClient() {
     },
     {
       name: "Certified Laboratory Report",
-      file: "/doc/LABORATORY_report",
+      file: "/doc/LABORATORY_report.pdf",
       icon: "🧪",
       description:
         "Accredited laboratory test report verifying product quality, safety standards, and compliance",
@@ -360,7 +360,7 @@ export default function AboutusClient() {
               </motion.h2>
 
               <motion.div
-                className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10"
+                className="grid grid-cols-1 md:grid-cols-4 gap-8 sm:gap-10"
                 variants={staggerContainer}
               >
                 {certificates.map((cert, index) => (
