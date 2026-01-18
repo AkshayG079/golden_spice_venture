@@ -1,4 +1,3 @@
-
 "use client";
 import Footer from "@/component/Footer";
 import Header from "@/component/Header";
@@ -92,6 +91,13 @@ export default function AboutusClient() {
       file: "/doc/fssai.pdf",
       icon: "🍃",
       description: "Food Safety and Standards Authority of India certification",
+    },
+    {
+      name: "Certified Laboratory Report",
+      file: "/doc/LABORATORY_report",
+      icon: "🧪",
+      description:
+        "Accredited laboratory test report verifying product quality, safety standards, and compliance",
     },
   ];
 
@@ -399,7 +405,6 @@ export default function AboutusClient() {
                         </span>
                         View
                       </motion.a>
-
                     </div>
                   </motion.div>
                 ))}

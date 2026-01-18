@@ -1,9 +1,10 @@
 import "./globals.css";
+import Script from "next/script";
 import { Toaster } from "react-hot-toast";
 
 export const metadata = {
 
-   metadataBase: new URL("https://goldenspiceventure.com"),
+   metadataBase: new URL("https://www.goldenspiceventure.com"),
   title: "Golden Spice Venture",
   description: "Premium turmeric exporter from India with global shipping.",
   icons: {
@@ -48,7 +49,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head>
+      <body>
         <link
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
           rel="stylesheet"
@@ -72,9 +73,20 @@ export default function RootLayout({ children }) {
           href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700;900&display=swap"
           rel="stylesheet"
         />
-      </head>
 
-      <body>
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-RX5LSY934Z"
+        />
+
+        <Script id="google-analytics">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-RX5LSY934Z');
+          `}
+        </Script>
         <Toaster position="top-right" />
         {children}
       </body>
